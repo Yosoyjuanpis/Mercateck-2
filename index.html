@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Accesorios para Carros</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Tienda en línea de accesorios para carros, incluyendo radios, luces LED, cámaras de reversa y más. Compra con seguridad y estilo.">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="imagenes/catalogo Mercateck_page-0001-2.png" alt="Logo Mercateck">
+        <section id="contactanos">
+            <h2>¡Síguenos en!</h2>
+            <a href="https://www.facebook.com/profile.php?id=100068966515218" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook" style="color: #4267B2;"></i>
+            </a>
+            <a href="https://www.instagram.com/mercateck01/reels/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram" style="color: #E4405F;"></i>
+            </a>
+            <a href="https://www.tiktok.com/@mercateck01" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok" style="color: #000000;"></i>
+            </a>
+        </section>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="#home">Inicio</a>
+        <div class="menu_desplegable">
+            <button class="soltar">Productos</button>
+            <div class="contenido-desplegable">
+                <a href="radios.html">Radios</a>
+                <a href="camaras.html">Cámaras de reversa</a>
+                <a href="luces.html">Luces LED</a>
+                <a href="antiempañante.html">Antiempañante</a>
+            </div>
+        </div>
+        <div class="menu_desplegable">
+            <button class="soltar">Contáctanos</button>
+            <div class="contenido-desplegable">
+                <a href="https://www.facebook.com/profile.php?id=100068966515218" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook" style="color: #4267B2;"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/mercateck01/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram" style="color: #E4405F;"></i> Instagram
+                </a>
+                <a href="https://www.tiktok.com/@mercateck01" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok" style="color: #000000;"></i> TikTok
+                </a>
+            </div>
+        </div>
+        <div class="menu_desplegable">
+            <button class="soltar">Acerca de nosotros</button>
+            <div class="contenido-desplegable">
+                <a href="quienes_somos.html">Quiénes Somos</a>
+                <a href="beneficios_mercateck.html">Beneficios de Mercateck</a>
+                <a href="mision_vision.html">Misión y Visión</a>
+                <a href="objetivos_generales.html">Objetivos Generales</a>
+            </div>
+        </div>
+        <a href="#" id="btnRegistro">Registro</a>
+        <a href="#" id="btnTips">Tips de Cuidado</a>
+        <button id="cartButton" data-count="0">Ver Carrito (0)</button>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+        <section id="productos">
+            <h2>Accesorios Disponibles</h2>
+            <div class="producto" id="radios">
+                <img src="imagenes/catalogo Mercateck_page-0001.jpg" alt="Radios de alta calidad">
+                <h3>¡Equipa tu vehículo con lo mejor!</h3>
+                <p>Radios, luces LED, cámaras de reversa y luces de lujo para una experiencia de manejo segura y con estilo.</p>
+                <p><strong>$ 50,000</strong></p>
+                <button class="agregar" data-producto="Radios" data-precio="50000" data-stock="10">Agregar al carrito</button>
+            </div>
+            <div class="producto" id="camaras">
+                <img src="imagenes/catalogo Mercateck_page-0004.jpg" alt="Cámaras de reversa">
+                <h3>Cámaras de reversa</h3>
+                <p>Ve lo que está detrás de ti y maneja con confianza.</p>
+                <p><strong>$ 50,000</strong></p>
+                <button class="agregar" data-producto="Cámaras de reversa" data-precio="50000" data-stock="5">Agregar al carrito</button>
+            </div>
+            <div class="producto" id="luces">
+                <img src="imagenes/catalogo Mercateck_page-0008.jpg" alt="Luces LED">
+                <h3>Luces LED</h3>
+                <p>Visibilidad superior, seguridad garantizada.</p>
+                <p><strong>$ 30,000</strong></p>
+                <button class="agregar" data-producto="Luces LED" data-precio="30000" data-stock="20">Agregar al carrito</button>
+            </div>
+            <div class="producto" id="antiempañante">
+                <img src="imagenes/catalogo Mercateck_page-0002.jpg" alt="Antiempañante">
+                <h3>Antiempañante</h3>
+                <p>Visión clara en cualquier clima.</p>
+                <p><strong>$ 5,000</strong></p>
+                <button class="agregar" data-producto="Antiempañante" data-precio="5000" data-stock="15">Agregar al carrito</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Carrito -->
+    <div id="carritoModal" class="modal" role="dialog" aria-labelledby="cartTitle">
+        <div class="modal-content">
+            <span class="close" id="closeCarrito">&times;</span>
+            <h2 id="cartTitle">Tu Carrito</h2>
+            <div id="carrito-contenedor"></div>
+            <button id="finalizarCompra">Finalizar compra</button>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="modalRegistro" class="modal" role="dialog" aria-labelledby="registroTitle">
+        <div class="modal-content">
+            <span class="close" id="closeRegistro">&times;</span>
+            <h2 id="registroTitle">Registro de Clientes</h2>
+            <form id="formRegistro">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <br>
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+                <br>
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <br>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Tips -->
+    <div id="modalTips" class="modal" role="dialog" aria-labelledby="tipsTitle">
+        <div class="modal-content">
+            <span class="close" id="closeTips">&times;</span>
+            <h2 id="tipsTitle">Tips de Cuidado</h2>
+            <div class="tip">
+                <h3>Cuida tus Luces LED</h3>
+                <p>Utiliza un paño suave y agua tibia para limpiarlas y evita productos químicos agresivos.</p>
+            </div>
+            <div class="tip">
+                <h3>Mantenimiento de Cámaras de Reversa</h3>
+                <p>Revisa periódicamente la lente de la cámara y límpiala para asegurar una visión clara.</p>
+            </div>
+            <div class="tip">
+                <h3>Almacenamiento del Antiempañante</h3>
+                <p>Guarda tu antiempañante en un lugar seco y fresco para mantener su efectividad.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer con contactos -->
+    <footer>
+        <h2>Contactos</h2>
+        <section id="contactos">
+            <p>¡Si deseas más información, no dudes en contactarnos!</p>
+            <p>Síguenos en 
+                <a href="https://www.facebook.com/profile.php?id=100068966515218" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook" style="color: #4267B2;"></i> Merca Teck
+                </a>
+            </p>
+            <p>Síguenos en 
+                <a href="https://www.instagram.com/mercateck01/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram" style="color: #E4405F;"></i> Merca Teck
+                </a>
+            </p>
+            <p>Síguenos en 
+                <a href="https://www.tiktok.com/@mercateck01" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok" style="color: #000000;"></i> Merca Teck
+                </a>
+            </p>
+        </section>
+    </footer>
+
+    <script>
+        // Script para el carrito de compras
+        const carritoModal = document.getElementById('carritoModal');
+        const closeCarrito = document.getElementById('closeCarrito');
+        const cartButton = document.getElementById('cartButton');
+        const carritoContenedor = document.getElementById('carrito-contenedor');
+        let carrito = [];
+
+        // Función para agregar al carrito
+        document.querySelectorAll('.agregar').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const producto = e.target.getAttribute('data-producto');
+                const precio = e.target.getAttribute('data-precio');
+                const stock = e.target.getAttribute('data-stock');
+
+                carrito.push({ producto, precio, stock });
+                actualizarCarrito();
+            });
+        });
+
+        // Mostrar carrito
+        cartButton.addEventListener('click', () => {
+            carritoModal.style.display = 'block';
+        });
+
+        // Cerrar carrito
+        closeCarrito.addEventListener('click', () => {
+            carritoModal.style.display = 'none';
+        });
+
+        // Función para actualizar el carrito
+        function actualizarCarrito() {
+            carritoContenedor.innerHTML = '';
+            carrito.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.textContent = `${item.producto} - $${item.precio}`;
+                carritoContenedor.appendChild(itemDiv);
+            });
+            cartButton.setAttribute('data-count', carrito.length);
+            cartButton.textContent = `Ver Carrito (${carrito.length})`;
+        }
+
+        // Script para el modal de registro
+        const modalRegistro = document.getElementById('modalRegistro');
+        const btnRegistro = document.getElementById('btnRegistro');
+        const closeRegistro = document.getElementById('closeRegistro');
+
+        btnRegistro.addEventListener('click', () => {
+            modalRegistro.style.display = 'block';
+        });
+
+        closeRegistro.addEventListener('click', () => {
+            modalRegistro.style.display = 'none';
+        });
+
+        // Script para el modal de tips
+        const modalTips = document.getElementById('modalTips');
+        const btnTips = document.getElementById('btnTips');
+        const closeTips = document.getElementById('closeTips');
+
+        btnTips.addEventListener('click', () => {
+            modalTips.style.display = 'block';
+        });
+
+        closeTips.addEventListener('click', () => {
+            modalTips.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modalRegistro) {
+                modalRegistro.style.display = 'none';
+            }
+            if (e.target === modalTips) {
+                modalTips.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
